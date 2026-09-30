@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 3 · Road to the Ticerado Bowl</title>
-<meta name="description" content="Flutes Blow the Doors Off — Daniel dropped a league-best 172.2 in Week 3 while Medvene limped to a league-low 65.9. Tex, meanwhile, lost to The Median by 1.1 points, which is a special kind of pain.">
-<meta property="og:title" content="Week 3: Flutes Blow the Doors Off">
-<meta property="og:description" content="Daniel dropped a league-best 172.2 in Week 3 while Medvene limped to a league-low 65.9. Tex, meanwhile, lost to The Median by 1.1 points, which is a special kind of pain.">
+<meta name="description" content=" — Three weeks in, the top of the league is a two-horse race and the bottom is a support group. Week 4 asks who is real and who just had a good Sunday.">
+<meta property="og:title" content="Week 3: ">
+<meta property="og:description" content="Three weeks in, the top of the league is a two-horse race and the bottom is a support group. Week 4 asks who is real and who just had a good Sunday.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -96,6 +96,32 @@ tr.cut td { border-bottom: 2px solid var(--ink); }
 .archive { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .archive a { display: inline-block; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; font: 500 13px var(--mono); }
 .archive a.cur { border-color: var(--accent); color: var(--accent); }
+.feature { margin-top: 24px; border: 1.5px solid var(--ink); padding: 20px; }
+.feature .side .pts { font-size: 26px; }
+.feature .side .team { font-family: var(--serif); font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+.feature .blurb { font-size: 16px; }
+.inj { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.inj .kicker { display: inline; margin-right: 6px; font-size: 10px; }
+.inj b { color: var(--loss); font-weight: 600; }
+.lede.small h2 { font-size: clamp(32px, 7vw, 44px); margin: 8px 0 12px; }
+.section-copy { font-size: 16px; margin: 0 0 16px; }
+.pecking { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.pecking li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.pecking .rk { font: 800 24px var(--serif); color: var(--accent); }
+.pecking .nm { min-width: 0; }
+.pecking .nm b { display: block; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pecking small { display: block; font-size: 12px; color: var(--muted); }
+.pecking .st { display: flex; gap: 14px; font: 700 14px var(--mono); text-align: right; }
+.pecking .st small { font: 500 9px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.tiers { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); }
+.tier { border-top: 3px solid var(--rule); padding-top: 8px; min-width: 0; }
+.tier-in { border-top-color: var(--win); } .tier-miracle { border-top-color: var(--loss); }
+.tier ul { list-style: none; padding: 0; margin: 0; font-size: 14.5px; }
+.tier li { padding: 3px 0; overflow-wrap: anywhere; }
+.tier li .meta { white-space: nowrap; }
+.more { margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap; }
+.more a { color: var(--accent); font-weight: 600; text-decoration: none; }
+@media (max-width: 480px) { .pecking .st span:nth-child(2) { display: none; } }
 footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 40px; }
 </style>
 </head>
@@ -104,10 +130,11 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
 
 
 
+
 <header class="masthead wrap">
-  <p class="kicker">Road to the Ticerado Bowl · 2026</p>
-  <h1>Week 3</h1>
-  <p class="dek">Daniel dropped a league-best 172.2 in Week 3 while Medvene limped to a league-low 65.9. Tex, meanwhile, lost to The Median by 1.1 points, which is a special kind of pain.</p>
+  <p class="kicker">Road to the Ticerado Bowl · 2026 · Regular season</p>
+  <h1>Week 4</h1>
+  <p class="dek">Three weeks in, the top of the league is a two-horse race and the bottom is a support group. Week 4 asks who is real and who just had a good Sunday.</p>
   <div class="asof meta">Data as of SEP 29, 2026</div>
 </header>
 
@@ -121,14 +148,245 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
 
 <main class="wrap">
   <section class="tab" id="home">
-    <p class="meta">Scores final through week 3 · league median 102.40</p>
+    <p class="meta">Updated SEP 29, 2026 · Scores final through week 3 · Next update after week 4</p>
+
+    
     <div class="lede">
-      <p class="kicker" style="margin-top:24px">This week · Week 3</p>
-      <h2>Flutes Blow the Doors Off</h2>
-      <p>Daniel&#39;s Flutes were the class of Week 3, hanging 172.2 on George and winning by 73.7. Bijan Robinson supplied 35.0 of it. That&#39;s the top score of the week, the weekly payout, and the biggest blowout, all in one afternoon.</p><p>Andy&#39;s Giggle Island and Paul&#39;s Romo both stretched winning streaks to two. Andy got 33.6 from Brock Purdy to beat Ian 144.4 to 84.4. Paul rode Jaxon Smith-Njigba&#39;s 30.2 past Eamonn. Reid&#39;s Gibbs got 37.5 from Jahmyr Gibbs, the top individual score of the week, and beat Alex by 44.2.</p><p>At the bottom, Medvene scored 65.9 and lost to Nick, who won with just 102.4, exactly the median. Tex lost to The Median 102.4 to 101.3 and is 0-3. Eamonn left Tyler Shough (26.2) on the bench for Drake Maye (2.6), and his week went the way you&#39;d expect.</p>
+      <p class="kicker" style="margin-top:24px">This week · Week 4</p>
+      <h2>Contenders Meet Pretenders</h2>
+      <p>Six teams sit at 2-1 inside the playoff line, and two more at 2-1 are knocking. The gap between record and reality is huge. The Flutes (Daniel) and Giggle Island (Andy) both own 30-6 all-play marks and have beaten the median every week. Nice Pitts (Tex) is 0-3 and looking up at a very tall ladder.</p><p>Week 4 is a chance to sort the field. Daniel hosts Eamonn&#39;s Cookery, Andy visits a desperate Tex, and Nick and Paul play a 2-1 vs 2-1 game with real seeding weight. Meanwhile Medvene&#39;s Hammer limps in with De&#39;Von Achane on injured reserve. Here&#39;s the slate.</p>
     </div>
 
-    <div class="section-head"><h3>Final Scores</h3><span class="meta">Week 3</span></div>
+    
+    <article class="card match feature">
+      <p class="kicker">Game of the Week</p>
+      <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/Xmas-AndrewJanik/XMas_15.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'Nic'}))">
+    <div class="nm"><span class="team">Washington Murder Hornets</span>
+      <span class="mgr">Nick · 2-1</span></div>
+    <span class="pts">103.8</span>
+  </div>
+      <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CoachGruden-ChipWass/gruden-06.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'HIC'}))">
+    <div class="nm"><span class="team">Romo is my designated driver</span>
+      <span class="mgr">Paul · 2-1</span></div>
+    <span class="pts">112.3</span>
+  </div>
+      <p class="blurb">Two 2-1 teams riding two-game win streaks, with a playoff seed at stake. Paul&#39;s Romo is projected at 112.30 against Nick&#39;s Murder Hornets at 103.81, and Paul ranks 3rd in power to Nick&#39;s 6th. Nick has won two straight scoring just over 100, so he needs to show that wasn&#39;t luck.</p>
+      
+    </article>
+    
+
+    <div class="section-head"><h3>Week 4 Matchups</h3><span class="meta">Projected points</span></div>
+    <div class="cards">
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CatsAndDogs/cats_dogs-6.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FLU'}))">
+    <div class="nm"><span class="team">The Flutes</span>
+      <span class="mgr">Daniel · 2-1</span></div>
+    <span class="pts">122.8</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://st2.depositphotos.com/4265001/10158/v/950/depositphotos_101580264-stock-illustration-pug-dog-logo.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LBT'}))">
+    <div class="nm"><span class="team">LB The Cookery</span>
+      <span class="mgr">Eamonn · 1-2</span></div>
+    <span class="pts">115.3</span>
+  </div>
+        <p class="blurb">The Flutes (Daniel) are the No. 1 power team and project at 122.79 against Eamonn&#39;s 115.31. Eamonn is 1-2 and coming off an 84.3 week where he left 26.2 points on the bench. No injured starters on either side, so this comes down to who starts the right players.</p>
+        
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/core/BobsBurgers/Bob_Happy.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MAR'}))">
+    <div class="nm"><span class="team">Hurts When I Twist Em</span>
+      <span class="mgr">Ian · 1-2</span></div>
+    <span class="pts">105.1</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/30e2a6e0-9abe-11f1-9b94-67d561221a90" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GT3'}))">
+    <div class="nm"><span class="team">Greg&#39;s Baby Dolls</span>
+      <span class="mgr">George · 1-2</span></div>
+    <span class="pts">111.6</span>
+  </div>
+        <p class="blurb">Two 1-2 teams looking for footing. George is a slight favorite at 111.64 to Ian&#39;s 105.09. Both have a questionable WR: Jaylen Waddle for Ian and Jalen Coker for George. George has lost two straight and Ian&#39;s scores have swung wildly: 81.7, 168.8, 84.4.</p>
+        <p class="inj"><span class="kicker">Injury watch</span> Jaylen Waddle <b>questionable</b>, Jalen Coker <b>questionable</b></p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/SuperCrusher-JamesYang/SuperCrusher-07.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'TC'}))">
+    <div class="nm"><span class="team">Nice Pitts</span>
+      <span class="mgr">Tex · 0-3</span></div>
+    <span class="pts">99.6</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/FrozenTundra-ToddDetwiler/TundraPack_10_01.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GIG'}))">
+    <div class="nm"><span class="team">Giggle Island</span>
+      <span class="mgr">Andy · 2-1</span></div>
+    <span class="pts">118.8</span>
+  </div>
+        <p class="blurb">Tex is 0-3 and projected at 99.58 against Andy&#39;s 118.75. Andy&#39;s Giggle Island is the No. 2 power team, riding Brock Purdy&#39;s 33.6-point week. Tex needs an upset to keep his miracle alive.</p>
+        
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="http://c3.nrostatic.com/sites/default/files/uploaded/petec.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'DLB'}))">
+    <div class="nm"><span class="team">Daejon Love Bomb</span>
+      <span class="mgr">Alex · 2-1</span></div>
+    <span class="pts">114.3</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="http://chiefwritingwolf.files.wordpress.com/2012/06/randy-bish-062212.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MED'}))">
+    <div class="nm"><span class="team">The Hebrew Hammer</span>
+      <span class="mgr">Medvene · 1-2</span></div>
+    <span class="pts">88.2</span>
+  </div>
+        <p class="blurb">Alex is a heavy favorite at 114.32 against Medvene&#39;s 88.18. The Hammer has De&#39;Von Achane on injured reserve and Justin Jefferson questionable. Medvene&#39;s 65.9 was the week low, and he has yet to beat the median.</p>
+        <p class="inj"><span class="kicker">Injury watch</span> De&#39;Von Achane <b>injury reserve</b>, Justin Jefferson <b>questionable</b></p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Charli_XCX_-_Brat_%28album_cover%29.png/640px-Charli_XCX_-_Brat_%28album_cover%29.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LAK'}))">
+    <div class="nm"><span class="team">L.A. Kimballs</span>
+      <span class="mgr">Greg · 2-1</span></div>
+    <span class="pts">115.7</span>
+  </div>
+        <div class="side ">
+    <span class="logo ph">MED</span>
+    <div class="nm"><span class="team">The Median</span>
+      <span class="mgr"><span class="median-tag">LEAGUE MEDIAN</span></span></div>
+    <span class="pts">—</span>
+  </div>
+        <p class="blurb">Greg&#39;s Kimballs face The Median, and are projected at 115.69, comfortably above what the median has usually been. Greg is 2-1 and 4th in power, so a clean win keeps him steady in the top six.</p>
+        
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://ih1.redbubble.net/image.3321528331.1146/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GEM'}))">
+    <div class="nm"><span class="team">Baby Billy&#39;s Bible Bonkers</span>
+      <span class="mgr">Joe · 2-1</span></div>
+    <span class="pts">100.6</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-13.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FRA'}))">
+    <div class="nm"><span class="team">Never Gonna Gibbs You Up</span>
+      <span class="mgr">Reid · 2-1</span></div>
+    <span class="pts">102.4</span>
+  </div>
+        <p class="blurb">A tight one, with Reid&#39;s Gibbs projected at 102.40 to Joe&#39;s 100.59. Joe has Josh Allen questionable, while Reid has Breece Hall and Mike Evans both questionable. Both are 2-1 and the winner gets breathing room.</p>
+        <p class="inj"><span class="kicker">Injury watch</span> Josh Allen <b>questionable</b>, Breece Hall <b>questionable</b>, Mike Evans <b>questionable</b></p>
+      </article>
+      
+    </div>
+
+    <div class="section-head"><h3>The Pecking Order</h3><span class="meta">Power rankings · through week 3</span></div>
+    <p class="section-copy">Daniel&#39;s Flutes and Andy&#39;s Giggle Island share the top with matching 30-6 all-play records, and both are slightly unlucky at -0.5. Joe (+0.8) and Alex (+0.7) are the luckiest, both 2-1 with middling all-play marks. Tex (-0.8) is the unluckiest, and Medvene sits last at 6-30 despite a 1-2 record.</p>
+    <ol class="pecking">
+      
+      <li><span class="rk">1</span>
+        <span class="nm"><b>The Flutes</b><small>Daniel · 2-1</small></span>
+        <span class="st"><span>30-6<small>all-play</small></span><span>142.7<small>avg</small></span>
+          <span class="neg">-0.5<small>luck</small></span></span></li>
+      
+      <li><span class="rk">2</span>
+        <span class="nm"><b>Giggle Island</b><small>Andy · 2-1</small></span>
+        <span class="st"><span>30-6<small>all-play</small></span><span>138.3<small>avg</small></span>
+          <span class="neg">-0.5<small>luck</small></span></span></li>
+      
+      <li><span class="rk">3</span>
+        <span class="nm"><b>Romo is my designated driver</b><small>Paul · 2-1</small></span>
+        <span class="st"><span>23-13<small>all-play</small></span><span>131.2<small>avg</small></span>
+          <span class="">+0.1<small>luck</small></span></span></li>
+      
+      <li><span class="rk">4</span>
+        <span class="nm"><b>L.A. Kimballs</b><small>Greg · 2-1</small></span>
+        <span class="st"><span>20-16<small>all-play</small></span><span>119.8<small>avg</small></span>
+          <span class="">+0.3<small>luck</small></span></span></li>
+      
+      <li><span class="rk">5</span>
+        <span class="nm"><b>Never Gonna Gibbs You Up</b><small>Reid · 2-1</small></span>
+        <span class="st"><span>20-16<small>all-play</small></span><span>115.8<small>avg</small></span>
+          <span class="">+0.3<small>luck</small></span></span></li>
+      
+      <li><span class="rk">6</span>
+        <span class="nm"><b>Washington Murder Hornets</b><small>Nick · 2-1</small></span>
+        <span class="st"><span>20-16<small>all-play</small></span><span>110.1<small>avg</small></span>
+          <span class="">+0.3<small>luck</small></span></span></li>
+      
+      <li><span class="rk">7</span>
+        <span class="nm"><b>Greg&#39;s Baby Dolls</b><small>George · 1-2</small></span>
+        <span class="st"><span>16-20<small>all-play</small></span><span>106.4<small>avg</small></span>
+          <span class="">-0.3<small>luck</small></span></span></li>
+      
+      <li><span class="rk">8</span>
+        <span class="nm"><b>Daejon Love Bomb</b><small>Alex · 2-1</small></span>
+        <span class="st"><span>16-20<small>all-play</small></span><span>106.3<small>avg</small></span>
+          <span class="pos">+0.7<small>luck</small></span></span></li>
+      
+      <li><span class="rk">9</span>
+        <span class="nm"><b>LB The Cookery</b><small>Eamonn · 1-2</small></span>
+        <span class="st"><span>15-21<small>all-play</small></span><span>108.2<small>avg</small></span>
+          <span class="">-0.2<small>luck</small></span></span></li>
+      
+      <li><span class="rk">10</span>
+        <span class="nm"><b>Baby Billy&#39;s Bible Bonkers</b><small>Joe · 2-1</small></span>
+        <span class="st"><span>15-21<small>all-play</small></span><span>103.6<small>avg</small></span>
+          <span class="pos">+0.8<small>luck</small></span></span></li>
+      
+      <li><span class="rk">11</span>
+        <span class="nm"><b>Hurts When I Twist Em</b><small>Ian · 1-2</small></span>
+        <span class="st"><span>14-22<small>all-play</small></span><span>111.6<small>avg</small></span>
+          <span class="">-0.2<small>luck</small></span></span></li>
+      
+      <li><span class="rk">12</span>
+        <span class="nm"><b>Nice Pitts</b><small>Tex · 0-3</small></span>
+        <span class="st"><span>9-27<small>all-play</small></span><span>99.7<small>avg</small></span>
+          <span class="neg">-0.8<small>luck</small></span></span></li>
+      
+      <li><span class="rk">13</span>
+        <span class="nm"><b>The Hebrew Hammer</b><small>Medvene · 1-2</small></span>
+        <span class="st"><span>6-30<small>all-play</small></span><span>86.6<small>avg</small></span>
+          <span class="pos">+0.5<small>luck</small></span></span></li>
+      
+    </ol>
+
+    <div class="section-head"><h3>Road to the Playoffs</h3><span class="meta">If the season ended today · 6 get in</span></div>
+    <p class="section-copy">If the season ended today, Daniel, Andy, Paul, Greg, Reid, and Nick would be in at 2-1. Alex and Joe are knocking, also 2-1. Ian, Eamonn, George, and Medvene are long shots at 1-2, and Tex at 0-3 needs a miracle. It&#39;s early, and one week can flip the whole order.</p>
+    <div class="tiers">
+      
+      
+      <div class="tier tier-in"><p class="kicker">In right now</p>
+        <ul><li>The Flutes <span class="meta">2-1</span></li><li>Giggle Island <span class="meta">2-1</span></li><li>Romo is my designated driver <span class="meta">2-1</span></li><li>L.A. Kimballs <span class="meta">2-1</span></li><li>Never Gonna Gibbs You Up <span class="meta">2-1</span></li><li>Washington Murder Hornets <span class="meta">2-1</span></li></ul></div>
+      
+      
+      
+      <div class="tier tier-knocking"><p class="kicker">Knocking</p>
+        <ul><li>Daejon Love Bomb <span class="meta">2-1</span></li><li>Baby Billy&#39;s Bible Bonkers <span class="meta">2-1</span></li></ul></div>
+      
+      
+      
+      <div class="tier tier-long_shots"><p class="kicker">Long shots</p>
+        <ul><li>Hurts When I Twist Em <span class="meta">1-2</span></li><li>LB The Cookery <span class="meta">1-2</span></li><li>Greg&#39;s Baby Dolls <span class="meta">1-2</span></li><li>The Hebrew Hammer <span class="meta">1-2</span></li></ul></div>
+      
+      
+      
+      <div class="tier tier-miracle"><p class="kicker">Need a miracle</p>
+        <ul><li>Nice Pitts <span class="meta">0-3</span></li></ul></div>
+      
+      
+    </div>
+    
+
+    <div class="section-head"><h3>Last Week</h3><span class="meta">Week 3 · final · median 102.40</span></div>
+    <div class="lede small">
+      <h2>Daniel Goes Nuclear</h2>
+      <p>The Flutes (Daniel) posted a league-high 172.2, led by Bijan Robinson&#39;s 35.0, and beat George by 73.7. Andy also crushed, with Brock Purdy&#39;s 33.6 driving a 144.4 win over Ian. Paul got 30.2 from Jaxon Smith-Njigba in a 141.6 win over Eamonn.</p><p>At the other end, Medvene&#39;s 65.9 was the week low, Eamonn benched Tyler Shough (26.2) for Drake Maye (2.6), and Joe lost despite scoring 105.3. Nick won with just 102.4, tying the median exactly, while Reid rode Jahmyr Gibbs&#39; 37.5 to a 130.9 win.</p>
+    </div>
     <div class="cards">
       
       <article class="card match">
@@ -146,7 +404,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         <p class="top">Top gun: Bijan Robinson (RB) 35.0</p>
-        <p class="blurb">Daniel&#39;s Flutes rolled 172.2 to George&#39;s 98.5. Bijan Robinson&#39;s 35.0 outscored most of George&#39;s lineup by himself.</p>
+        <p class="blurb">Daniel&#39;s 172.2 was the week high, with Bijan Robinson scoring 35.0. George got 21.8 from Trevor Lawrence but only 98.5 overall.</p>
       </article>
       
       <article class="card match">
@@ -164,7 +422,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         <p class="top">Top gun: Jaxon Smith-Njigba (WR) 30.2</p>
-        <p class="blurb">Paul won 141.6 to 84.3 behind 30.2 from Jaxon Smith-Njigba. Eamonn&#39;s best player was the Buccaneers D/ST at 13.2, which says plenty.</p>
+        <p class="blurb">Paul rolled 141.6 behind Jaxon Smith-Njigba&#39;s 30.2. Eamonn managed 84.3, and his Buccaneers D/ST&#39;s 13.2 was his top scorer.</p>
       </article>
       
       <article class="card match">
@@ -182,7 +440,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         <p class="top">Top gun: Brock Purdy (QB) 33.6</p>
-        <p class="blurb">Andy took a 144.4 to 84.4 win, with Brock Purdy putting up 33.6. Ian&#39;s top scorer was Davante Adams at 17.5, and that wasn&#39;t enough.</p>
+        <p class="blurb">Andy&#39;s 144.4 was led by Brock Purdy&#39;s 33.6. Ian&#39;s 84.4 was topped by Davante Adams at 17.5.</p>
       </article>
       
       <article class="card match">
@@ -200,7 +458,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         <p class="top">Top gun: James Cook III (RB) 21.0</p>
-        <p class="blurb">Nick escaped with a 102.4 to 65.9 win over Medvene, with James Cook III leading the way at 21.0. Medvene&#39;s 65.9 was the low score of the week.</p>
+        <p class="blurb">Nick escaped with 102.4, with James Cook III adding 21.0. Medvene&#39;s 65.9 was the week low, even with Matthew Stafford&#39;s 22.0.</p>
       </article>
       
       <article class="card match">
@@ -218,7 +476,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         
-        <p class="blurb">The Median beat Tex 102.4 to 101.3, and Derrick Henry&#39;s 21.5 wasn&#39;t enough to prevent it. Tex is 0-3 and has now lost to a spreadsheet.</p>
+        <p class="blurb">Tex scored 101.3, just 1.1 short of The Median&#39;s 102.4, and fell to 0-3. Derrick Henry&#39;s 21.5 wasn&#39;t enough.</p>
       </article>
       
       <article class="card match">
@@ -236,7 +494,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         <p class="top">Top gun: Jahmyr Gibbs (RB) 37.5</p>
-        <p class="blurb">Jahmyr Gibbs went for 37.5 and powered Reid to a 130.9 to 86.7 win. George Kittle&#39;s 24.0 was the only bright spot for Alex.</p>
+        <p class="blurb">Reid got 37.5 from Jahmyr Gibbs and won 130.9 to 86.7. Alex got 24.0 from George Kittle but not much else.</p>
       </article>
       
       <article class="card match">
@@ -254,129 +512,11 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </div>
         
         <p class="top">Top gun: Jared Goff (QB) 22.6</p>
-        <p class="blurb">Greg beat Joe 129.1 to 105.3 with Jared Goff scoring 22.6. Joe&#39;s 105.3 would have beaten the median and still lost.</p>
+        <p class="blurb">Greg&#39;s Kimballs won 129.1 to 105.3, with Jared Goff scoring 22.6. Joe&#39;s 105.3 would have beaten most opponents this week, but not this one.</p>
       </article>
       
     </div>
-
-    
-    <div class="section-head"><h3>Up Next</h3><span class="meta">Week 4 · projected</span></div>
-    <div class="cards">
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CatsAndDogs/cats_dogs-6.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FLU'}))">
-    <div class="nm"><span class="team">The Flutes</span>
-      <span class="mgr">Daniel · 2-1</span></div>
-    <span class="pts">122.8</span>
-  </div>
-        <div class="side ">
-    <img class="logo" src="https://st2.depositphotos.com/4265001/10158/v/950/depositphotos_101580264-stock-illustration-pug-dog-logo.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LBT'}))">
-    <div class="nm"><span class="team">LB The Cookery</span>
-      <span class="mgr">Eamonn · 1-2</span></div>
-    <span class="pts">115.3</span>
-  </div>
-        <p class="blurb">Daniel is projected at 122.79 against Eamonn&#39;s 115.31. Eamonn is a live underdog if he can set his lineup correctly.</p>
-      </article>
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/core/BobsBurgers/Bob_Happy.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MAR'}))">
-    <div class="nm"><span class="team">Hurts When I Twist Em</span>
-      <span class="mgr">Ian · 1-2</span></div>
-    <span class="pts">105.1</span>
-  </div>
-        <div class="side ">
-    <img class="logo" src="https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/30e2a6e0-9abe-11f1-9b94-67d561221a90" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GT3'}))">
-    <div class="nm"><span class="team">Greg&#39;s Baby Dolls</span>
-      <span class="mgr">George · 1-2</span></div>
-    <span class="pts">111.6</span>
-  </div>
-        <p class="blurb">Two 1-2 teams meet, with George projected at 111.64 to Ian&#39;s 105.09. Someone gets to 2-2 and someone doesn&#39;t.</p>
-      </article>
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/Xmas-AndrewJanik/XMas_15.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'Nic'}))">
-    <div class="nm"><span class="team">Washington Murder Hornets</span>
-      <span class="mgr">Nick · 2-1</span></div>
-    <span class="pts">103.8</span>
-  </div>
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CoachGruden-ChipWass/gruden-06.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'HIC'}))">
-    <div class="nm"><span class="team">Romo is my designated driver</span>
-      <span class="mgr">Paul · 2-1</span></div>
-    <span class="pts">112.3</span>
-  </div>
-        <p class="blurb">Paul is projected at 112.3 to Nick&#39;s 103.81. Nick needs more than the median this time.</p>
-      </article>
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/SuperCrusher-JamesYang/SuperCrusher-07.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'TC'}))">
-    <div class="nm"><span class="team">Nice Pitts</span>
-      <span class="mgr">Tex · 0-3</span></div>
-    <span class="pts">99.6</span>
-  </div>
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/FrozenTundra-ToddDetwiler/TundraPack_10_01.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GIG'}))">
-    <div class="nm"><span class="team">Giggle Island</span>
-      <span class="mgr">Andy · 2-1</span></div>
-    <span class="pts">118.8</span>
-  </div>
-        <p class="blurb">Andy is projected at 118.75 to Tex&#39;s 99.58. Tex is still looking for his first win.</p>
-      </article>
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="http://c3.nrostatic.com/sites/default/files/uploaded/petec.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'DLB'}))">
-    <div class="nm"><span class="team">Daejon Love Bomb</span>
-      <span class="mgr">Alex · 2-1</span></div>
-    <span class="pts">114.3</span>
-  </div>
-        <div class="side ">
-    <img class="logo" src="http://chiefwritingwolf.files.wordpress.com/2012/06/randy-bish-062212.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MED'}))">
-    <div class="nm"><span class="team">The Hebrew Hammer</span>
-      <span class="mgr">Medvene · 1-2</span></div>
-    <span class="pts">88.2</span>
-  </div>
-        <p class="blurb">Alex is projected at 114.32 to Medvene&#39;s 88.18. This is Medvene&#39;s best chance to stop the slide, and the projection isn&#39;t kind.</p>
-      </article>
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Charli_XCX_-_Brat_%28album_cover%29.png/640px-Charli_XCX_-_Brat_%28album_cover%29.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LAK'}))">
-    <div class="nm"><span class="team">L.A. Kimballs</span>
-      <span class="mgr">Greg · 2-1</span></div>
-    <span class="pts">115.7</span>
-  </div>
-        <div class="side ">
-    <span class="logo ph">MED</span>
-    <div class="nm"><span class="team">The Median</span>
-      <span class="mgr"><span class="median-tag">LEAGUE MEDIAN</span></span></div>
-    <span class="pts">—</span>
-  </div>
-        <p class="blurb">Greg is projected at 115.69 against The Median, who scores exactly the median. Beating it is harder than it sounds, as Tex can tell you.</p>
-      </article>
-      
-      <article class="card match">
-        <div class="side ">
-    <img class="logo" src="https://ih1.redbubble.net/image.3321528331.1146/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GEM'}))">
-    <div class="nm"><span class="team">Baby Billy&#39;s Bible Bonkers</span>
-      <span class="mgr">Joe · 2-1</span></div>
-    <span class="pts">100.6</span>
-  </div>
-        <div class="side ">
-    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-13.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FRA'}))">
-    <div class="nm"><span class="team">Never Gonna Gibbs You Up</span>
-      <span class="mgr">Reid · 2-1</span></div>
-    <span class="pts">102.4</span>
-  </div>
-        <p class="blurb">Reid is projected at 102.4 to Joe&#39;s 100.59, the closest projected matchup of the week. Both are 2-1 and neither can afford a slip.</p>
-      </article>
-      
-    </div>
-    
+    <p class="more"><a href="#awards">Week 3 awards →</a> <a href="#standings">Full standings →</a></p>
   </section>
 
   <section class="tab" id="teams">
@@ -403,7 +543,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 428.1</span><span>Power #1</span><span>vs Median 3-0</span></div>
-        <p>The top power-ranked team is 2-1 with 428.1 points for and a 30-6 all-play record. Week 3&#39;s 172.2 says it&#39;s getting scarier.</p>
+        <p>Daniel is 2-1 with a 428.1 points-for lead and a perfect 3-0 against the median. He&#39;s the No. 1 power team.</p>
       </article>
       
       <article class="card team-card">
@@ -425,7 +565,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 414.9</span><span>Power #2</span><span>vs Median 3-0</span></div>
-        <p>Andy is 2-1 on a two-game streak and has scored 131.4, 139.1 and 144.4, improving every week. He&#39;s second in power rankings with a 30-6 all-play record.</p>
+        <p>Andy is 2-1 with three straight 130+ scores and a 3-0 record against the median. Only Daniel has scored more.</p>
       </article>
       
       <article class="card team-card">
@@ -447,7 +587,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 393.7</span><span>Power #3</span><span>vs Median 2-1</span></div>
-        <p>Paul is 2-1 and has scored 146.8 and 141.6 in his last two after a 105.3 opener. Third in power rankings and trending up.</p>
+        <p>Paul has won two straight after a slow 105.3 opener, with 146.8 and 141.6 since. He&#39;s a strong No. 3.</p>
       </article>
       
       <article class="card team-card">
@@ -469,7 +609,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 359.4</span><span>Power #4</span><span>vs Median 2-1</span></div>
-        <p>Greg is 2-1 with 359.4 points, and a Week 2 dip to 92.1 is the only blemish. He faces The Median next.</p>
+        <p>Greg is 2-1 with a rocky 92.1 in the middle but 129.1 last week. Steady enough for 4th.</p>
       </article>
       
       <article class="card team-card">
@@ -491,7 +631,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 347.4</span><span>Power #5</span><span>vs Median 2-1</span></div>
-        <p>Reid is 2-1 and fifth in power rankings, with 130.9 this week after a 93.1 dip. Gibbs did the heavy lifting.</p>
+        <p>Reid is 2-1 and coming off 130.9 thanks to Gibbs&#39;s 37.5. His 93.1 in Week 2 shows the volatility.</p>
       </article>
       
       <article class="card team-card">
@@ -513,7 +653,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 330.4</span><span>Power #6</span><span>vs Median 1-0</span></div>
-        <p>Nick is 2-1 on the strength of a 102.4 win that was exactly the median. His 330.4 points is middle of the pack, but a win is a win.</p>
+        <p>Nick is 2-1 on the back of two narrow wins, both near 100 points. His all-play is fine, but he&#39;s the most fragile of the top six.</p>
       </article>
       
       <article class="card team-card">
@@ -535,7 +675,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 319.0</span><span>Power #8</span><span>vs Median 1-2</span></div>
-        <p>Alex is 2-1 but ranked eighth in power with a 16-20 all-play record. This week&#39;s 86.7 snapped a two-week run over 100.</p>
+        <p>Alex is 2-1 but scored just 86.7 last week. He&#39;s among the luckiest teams at +0.7.</p>
       </article>
       
       <article class="card team-card">
@@ -557,7 +697,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 310.9</span><span>Power #10</span><span>vs Median 1-2</span></div>
-        <p>Joe is 2-1 but tenth in power, and lost this week despite scoring 105.3. His scoring has been steady but modest at 310.9 points.</p>
+        <p>Joe is 2-1 despite averaging 103.63, and is the luckiest team in the league at +0.8. Consistent, but not dominant.</p>
       </article>
       
       <article class="card team-card">
@@ -579,7 +719,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 334.9</span><span>Power #11</span><span>vs Median 1-2</span></div>
-        <p>Ian is 1-2 despite 334.9 points, thanks to a wild 81.7, 168.8, 84.4 season. The 168.8 is the peak, but he needs a repeat.</p>
+        <p>Ian is 1-2 with scores of 81.7, 168.8, and 84.4. Nobody in the league is harder to predict.</p>
       </article>
       
       <article class="card team-card">
@@ -601,7 +741,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 324.6</span><span>Power #9</span><span>vs Median 1-1</span></div>
-        <p>Eamonn is 1-2 after scoring 119.8 and 120.5 in the first two weeks. Then came 84.3 and a bench blunder to forget.</p>
+        <p>Eamonn is 1-2 and fell to 84.3 after two 120s. The Shough-Maye decision hurt.</p>
       </article>
       
       <article class="card team-card">
@@ -623,7 +763,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 319.1</span><span>Power #7</span><span>vs Median 1-2</span></div>
-        <p>George is 1-2 and on a two-game skid, having opened with 160.4 before scoring 60.2 and 98.5. He&#39;s seventh in power, so there&#39;s still hope.</p>
+        <p>George is 1-2 with a 160.4 opener, then 60.2 and 98.5. He&#39;s lost two straight.</p>
       </article>
       
       <article class="card team-card">
@@ -645,7 +785,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 259.7</span><span>Power #13</span><span>vs Median 0-3</span></div>
-        <p>Medvene is 1-2 with a 6-30 all-play record and has scored 119.1, 74.7 and 65.9. The slide is real, and he is last in power rankings.</p>
+        <p>Medvene is 1-2 with the league&#39;s lowest average at 86.57 and an 0-3 record against the median. Scores have fallen each week.</p>
       </article>
       
       <article class="card team-card">
@@ -667,7 +807,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
           
         </div>
         <div class="stats meta"><span>PF 299.1</span><span>Power #12</span><span>vs Median 0-3</span></div>
-        <p>Tex is 0-3, but 299.1 points is better than Medvene&#39;s total. Scores of 104.8, 93.0 and 101.3 haven&#39;t been enough.</p>
+        <p>Tex is 0-3, with all three losses close to or below the median. He&#39;s the unluckiest team at -0.8.</p>
       </article>
       
     </div>
@@ -838,7 +978,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>The Flutes</h3>
         <span class="meta">Daniel</span>
         <div class="val">172.2</div>
-        <p>Daniel&#39;s 172.2 was the best score of the week and earns him the payout.</p>
+        <p>Daniel&#39;s 172.2 takes the weekly payout and a lot of bragging rights.</p>
       </article>
       
       <article class="card award">
@@ -846,7 +986,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>The Hebrew Hammer</h3>
         <span class="meta">Medvene</span>
         <div class="val">65.9</div>
-        <p>Medvene&#39;s 65.9 was the lowest score of the week, and it wasn&#39;t close.</p>
+        <p>Medvene&#39;s 65.9 was the week low, and the Hammer needs a hard reset.</p>
       </article>
       
       <article class="card award">
@@ -854,7 +994,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>The Flutes</h3>
         <span class="meta">Daniel</span>
         <div class="val">73.7</div>
-        <p>Daniel beat George by 73.7, a margin that doesn&#39;t need a highlight reel.</p>
+        <p>Daniel beat George by 73.7, which is more than some teams score in a week.</p>
       </article>
       
       <article class="card award">
@@ -862,7 +1002,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>L.A. Kimballs</h3>
         <span class="meta">Greg</span>
         <div class="val">23.8</div>
-        <p>Greg beat Joe by 23.8, which is the &#39;nail-biter&#39; only in the sense that the closest real game went to The Median.</p>
+        <p>Greg survived Joe by 23.8, which is a nail-biter only by this week&#39;s standards.</p>
       </article>
       
       <article class="card award">
@@ -870,7 +1010,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>Washington Murder Hornets</h3>
         <span class="meta">Nick</span>
         <div class="val">102.4</div>
-        <p>Nick won with 102.4, exactly the median, and Medvene helped by scoring 65.9.</p>
+        <p>Nick won with just 102.4, exactly the median, and should send a thank-you note.</p>
       </article>
       
       <article class="card award">
@@ -878,7 +1018,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>Baby Billy&#39;s Bible Bonkers</h3>
         <span class="meta">Joe</span>
         <div class="val">105.3</div>
-        <p>Joe scored 105.3 and lost, which is a good score on a bad day.</p>
+        <p>Joe lost despite scoring 105.3, which beat the median but not Greg.</p>
       </article>
       
       <article class="card award">
@@ -886,7 +1026,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>Never Gonna Gibbs You Up</h3>
         <span class="meta">Reid</span>
         <div class="val">37.5</div>
-        <p>Jahmyr Gibbs dropped 37.5 for Reid, the top individual score of the week.</p>
+        <p>Jahmyr Gibbs dropped 37.5 for Reid, a player-of-the-week performance.</p>
       </article>
       
       <article class="card award">
@@ -894,7 +1034,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
         <h3>LB The Cookery</h3>
         <span class="meta">Eamonn</span>
         <div class="val">23.6</div>
-        <p>Eamonn started Drake Maye (2.6) over Tyler Shough (26.2), leaving 23.6 points on the bench.</p>
+        <p>Eamonn benched Tyler Shough&#39;s 26.2 for Drake Maye&#39;s 2.6, a 23.6-point mistake.</p>
       </article>
       
     </div>
@@ -903,7 +1043,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   <section class="tab roundup" id="roundup">
     <p class="kicker">The Round Up · Week 3</p>
     <h2 style="font-size:clamp(40px,9vw,60px);margin:4px 0 24px">State of the League</h2>
-    <p>State of the league: it&#39;s tight at the top and messy below. Eight teams are 2-1, four are 1-2, and only Tex is winless at 0-3. Daniel and Andy have separated themselves in points and all-play, but the standings don&#39;t reflect it yet.</p><p>Power versus record: Daniel and Andy both sit at 30-6 all-play, and both are 2-1. Medvene is 1-2 with a 6-30 all-play record, the worst in the league. Alex and Joe are 2-1 but rank eighth and tenth in power, so their records are ahead of their scoring. Ian has 334.9 points and a 1-2 record, and he&#39;s the unluckiest by that measure.</p><p>Trending: Andy has scored more each week, and Paul has put up two straight 140-plus scores. Daniel&#39;s 172.2 makes him the team to beat. Going the other way, Medvene has fallen from 119.1 to 74.7 to 65.9, and George has lost two straight after opening with 160.4.</p><p>Next week: Daniel hosts Eamonn, and Andy visits Tex. Greg plays The Median. Reid and Joe have the closest projected game, 102.4 to 100.59, and Ian and George is a good one for the 1-2 club. Watch Medvene against Alex, where a win would be a big relief.</p>
+    <p>The league already has a clear top tier. Daniel and Andy are 30-6 in all-play and unbeaten against the median, and Paul is close behind. If any of them slip, it will be because of matchup luck.</p><p>The middle is a logjam. Six teams at 2-1 are in and two more are knocking, so one bad week can drop someone out of the top six. The Nick vs. Paul game will do a lot of sorting.</p><p>The bottom is rough. Tex is 0-3 and Medvene averages 86.57 with Achane on IR. Both need help fast.</p><p>Watch the questionable tags: Josh Allen for Joe, Breece Hall and Mike Evans for Reid, Justin Jefferson for Medvene, and Waddle and Coker in the Ian-George game. Check lineups before kickoff, and Eamonn, please check twice.</p>
     <div class="section-head"><h3>Archive</h3></div>
     <ul class="archive">
       <li><a class="cur" href="../weeks/week3.html">Week 3</a></li>
@@ -911,7 +1051,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 4
   </section>
 </main>
 
-<footer class="wrap meta">Road to the Ticerado Bowl · generated 2026-09-29 21:13 · <a href="../index.html" style="color:inherit">latest</a></footer>
+<footer class="wrap meta">Road to the Ticerado Bowl · generated 2026-09-29 21:25 · <a href="../index.html" style="color:inherit">latest</a></footer>
 
 <script>
 (function () {
