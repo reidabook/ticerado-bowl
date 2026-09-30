@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 3 · Road to the Ticerado Bowl</title>
+<meta name="description" content="Week 3 in the Books — The Flutes led the league with 172.2.">
+<meta property="og:title" content="Week 3: Week 3 in the Books">
+<meta property="og:description" content="The Flutes led the league with 172.2.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f8f5ee; --surface: #fffdf8; --ink: #161514; --muted: #6b665d; --rule: #d8d2c4;
+  --accent: #9b1c1c; --win: #1f5f3a; --loss: #9b1c1c; --bar: #cfc6b3;
+  --serif: "Newsreader", Georgia, serif; --sans: "Inter", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141312; --surface: #1c1b19; --ink: #efebe3; --muted: #9d978b; --rule: #37342f;
+          --accent: #e0605a; --win: #6fc28f; --loss: #e0605a; --bar: #4a463f; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.kicker { font: 700 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 6px; }
+.meta { font: 500 11px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 800; letter-spacing: -.035em; line-height: .95; margin: 0; }
+header.masthead { padding-top: 48px; padding-bottom: 24px; }
+header.masthead h1 { font-size: clamp(64px, 16vw, 120px); }
+.dek { font-size: 17px; color: var(--muted); max-width: 32em; margin: 18px 0 20px; }
+.asof { display: inline-flex; gap: 8px; align-items: center; border-top: 1px solid var(--rule); padding-top: 10px; }
+.asof::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+nav.tabs { position: sticky; top: 0; z-index: 5; background: var(--bg); border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+nav.tabs .wrap { display: flex; overflow-x: auto; scrollbar-width: none; }
+nav.tabs a { flex: 1 0 auto; text-align: center; padding: 13px 14px 11px; font: 600 14px var(--sans); color: var(--muted);
+  text-decoration: none; border-bottom: 3px solid transparent; }
+nav.tabs a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+section.tab { padding: 28px 0 56px; scroll-margin-top: 52px; }
+.js section.tab:not(.active) { display: none; }
+.lede h2 { font-size: clamp(44px, 11vw, 76px); margin: 4px 0 18px; }
+.lede p { font-size: 17px; margin: 0 0 14px; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin: 44px 0 16px; }
+.section-head h3 { font-size: 28px; }
+
+.cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 16px; min-width: 0; }
+.match .side { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 4px 0; }
+.match .side .nm { min-width: 0; }
+.match .side .team { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+.match .side .mgr { font-size: 12px; color: var(--muted); }
+.match .side .pts { font: 700 20px var(--mono); }
+.match .side.lost { opacity: .55; }
+.match .side.won .pts { color: var(--win); }
+.match .top { font-size: 12px; color: var(--muted); margin: 0; }
+.match .blurb { border-top: 1px dashed var(--rule); margin: 10px 0 0; padding-top: 10px; font-size: 14.5px; }
+.logo { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; background: var(--rule); display: block; }
+.logo.ph { display: grid; place-items: center; font: 700 10px var(--mono); color: var(--muted); }
+.median-tag { font: 700 10px var(--mono); letter-spacing: .1em; color: var(--accent); }
+
+.team-card header { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.team-card .logo { width: 44px; height: 44px; }
+.team-card h3 { font-size: 22px; line-height: 1.05; overflow-wrap: anywhere; }
+.team-card .rec { font: 700 18px var(--mono); text-align: right; }
+.team-card .rec small { display: block; font: 500 10px var(--mono); color: var(--muted); letter-spacing: .08em; }
+.spark { display: flex; align-items: flex-end; gap: 4px; height: 44px; margin: 14px 0 6px; }
+.spark span { flex: 1; background: var(--bar); border-radius: 2px 2px 0 0; min-height: 2px; position: relative; }
+.spark span.w { background: var(--win); } .spark span.l { background: var(--loss); opacity: .7; }
+.team-card p { font-size: 14.5px; margin: 8px 0 0; }
+.team-card .stats { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 10px 10px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--rule); }
+th { font: 700 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+td.tm, th.tm { text-align: left; }
+td.tm { max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+td.tm small { display: block; color: var(--muted); font-size: 12px; }
+td.num { font-family: var(--mono); }
+tr:last-child td { border-bottom: 0; }
+tr.cut td { border-bottom: 2px solid var(--ink); }
+.pos { color: var(--win); } .neg { color: var(--loss); }
+.legend { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+.award .kicker { margin-bottom: 10px; }
+.award h3 { font-size: 26px; line-height: 1.05; overflow-wrap: anywhere; }
+.award .val { font: 700 28px var(--mono); margin: 10px 0 4px; }
+.award p { font-size: 14.5px; margin: 6px 0 0; }
+
+.roundup p { font-size: 17px; margin: 0 0 16px; }
+.roundup p:first-of-type::first-letter { font: 800 64px/0.8 var(--serif); float: left; margin: 6px 8px 0 0; color: var(--accent); }
+.archive { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.archive a { display: inline-block; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; font: 500 13px var(--mono); }
+.archive a.cur { border-color: var(--accent); color: var(--accent); }
+footer { border-top: 1px solid var(--rule); padding-top: 20px; padding-bottom: 40px; }
+</style>
+</head>
+<body>
+
+
+
+
+<header class="masthead wrap">
+  <p class="kicker">Road to the Ticerado Bowl · 2026</p>
+  <h1>Week 3</h1>
+  <p class="dek">The Flutes led the league with 172.2.</p>
+  <div class="asof meta">Data as of SEP 29, 2026</div>
+</header>
+
+<nav class="tabs" aria-label="Sections"><div class="wrap">
+  <a href="#home" data-tab="home">Home</a>
+  <a href="#teams" data-tab="teams">Teams</a>
+  <a href="#standings" data-tab="standings">Standings</a>
+  <a href="#awards" data-tab="awards">Awards</a>
+  <a href="#roundup" data-tab="roundup">Round Up</a>
+</div></nav>
+
+<main class="wrap">
+  <section class="tab" id="home">
+    <p class="meta">Scores final through week 3 · league median 102.40</p>
+    <div class="lede">
+      <p class="kicker" style="margin-top:24px">This week · Week 3</p>
+      <h2>Week 3 in the Books</h2>
+      <p>League median this week: 102.4.</p>
+    </div>
+
+    <div class="section-head"><h3>Final Scores</h3><span class="meta">Week 3</span></div>
+    <div class="cards">
+      
+      <article class="card match">
+        <div class="side lost">
+    <img class="logo" src="https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/30e2a6e0-9abe-11f1-9b94-67d561221a90" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GT3'}))">
+    <div class="nm"><span class="team">Greg&#39;s Baby Dolls</span>
+      <span class="mgr">George · 1-2</span></div>
+    <span class="pts">98.5</span>
+  </div>
+        <div class="side won">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CatsAndDogs/cats_dogs-6.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FLU'}))">
+    <div class="nm"><span class="team">The Flutes</span>
+      <span class="mgr">Daniel · 2-1</span></div>
+    <span class="pts">172.2</span>
+  </div>
+        
+        <p class="top">Top gun: Bijan Robinson (RB) 35.0</p>
+        <p class="blurb">The Flutes beat Greg&#39;s Baby Dolls 172.2–98.5.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side won">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CoachGruden-ChipWass/gruden-06.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'HIC'}))">
+    <div class="nm"><span class="team">Romo is my designated driver</span>
+      <span class="mgr">Paul · 2-1</span></div>
+    <span class="pts">141.6</span>
+  </div>
+        <div class="side lost">
+    <img class="logo" src="https://st2.depositphotos.com/4265001/10158/v/950/depositphotos_101580264-stock-illustration-pug-dog-logo.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LBT'}))">
+    <div class="nm"><span class="team">LB The Cookery</span>
+      <span class="mgr">Eamonn · 1-2</span></div>
+    <span class="pts">84.3</span>
+  </div>
+        
+        <p class="top">Top gun: Jaxon Smith-Njigba (WR) 30.2</p>
+        <p class="blurb">Romo is my designated driver beat LB The Cookery 141.6–84.3.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side won">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/FrozenTundra-ToddDetwiler/TundraPack_10_01.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GIG'}))">
+    <div class="nm"><span class="team">Giggle Island</span>
+      <span class="mgr">Andy · 2-1</span></div>
+    <span class="pts">144.4</span>
+  </div>
+        <div class="side lost">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/core/BobsBurgers/Bob_Happy.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MAR'}))">
+    <div class="nm"><span class="team">Hurts When I Twist Em</span>
+      <span class="mgr">Ian · 1-2</span></div>
+    <span class="pts">84.4</span>
+  </div>
+        
+        <p class="top">Top gun: Brock Purdy (QB) 33.6</p>
+        <p class="blurb">Giggle Island beat Hurts When I Twist Em 144.4–84.4.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side lost">
+    <img class="logo" src="http://chiefwritingwolf.files.wordpress.com/2012/06/randy-bish-062212.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MED'}))">
+    <div class="nm"><span class="team">The Hebrew Hammer</span>
+      <span class="mgr">Medvene · 1-2</span></div>
+    <span class="pts">65.9</span>
+  </div>
+        <div class="side won">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/Xmas-AndrewJanik/XMas_15.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'Nic'}))">
+    <div class="nm"><span class="team">Washington Murder Hornets</span>
+      <span class="mgr">Nick · 2-1</span></div>
+    <span class="pts">102.4</span>
+  </div>
+        
+        <p class="top">Top gun: James Cook III (RB) 21.0</p>
+        <p class="blurb">Washington Murder Hornets beat The Hebrew Hammer 102.4–65.9.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side won">
+    <span class="logo ph">MED</span>
+    <div class="nm"><span class="team">The Median</span>
+      <span class="mgr"><span class="median-tag">LEAGUE MEDIAN</span></span></div>
+    <span class="pts">102.4</span>
+  </div>
+        <div class="side lost">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/SuperCrusher-JamesYang/SuperCrusher-07.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'TC'}))">
+    <div class="nm"><span class="team">Nice Pitts</span>
+      <span class="mgr">Tex · 0-3</span></div>
+    <span class="pts">101.3</span>
+  </div>
+        
+        
+        <p class="blurb">The Median beat Nice Pitts 102.4–101.3.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side won">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-13.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FRA'}))">
+    <div class="nm"><span class="team">Never Gonna Gibbs You Up</span>
+      <span class="mgr">Reid · 2-1</span></div>
+    <span class="pts">130.9</span>
+  </div>
+        <div class="side lost">
+    <img class="logo" src="http://c3.nrostatic.com/sites/default/files/uploaded/petec.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'DLB'}))">
+    <div class="nm"><span class="team">Daejon Love Bomb</span>
+      <span class="mgr">Alex · 2-1</span></div>
+    <span class="pts">86.7</span>
+  </div>
+        
+        <p class="top">Top gun: Jahmyr Gibbs (RB) 37.5</p>
+        <p class="blurb">Never Gonna Gibbs You Up beat Daejon Love Bomb 130.9–86.7.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side lost">
+    <img class="logo" src="https://ih1.redbubble.net/image.3321528331.1146/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GEM'}))">
+    <div class="nm"><span class="team">Baby Billy&#39;s Bible Bonkers</span>
+      <span class="mgr">Joe · 2-1</span></div>
+    <span class="pts">105.3</span>
+  </div>
+        <div class="side won">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Charli_XCX_-_Brat_%28album_cover%29.png/640px-Charli_XCX_-_Brat_%28album_cover%29.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LAK'}))">
+    <div class="nm"><span class="team">L.A. Kimballs</span>
+      <span class="mgr">Greg · 2-1</span></div>
+    <span class="pts">129.1</span>
+  </div>
+        
+        <p class="top">Top gun: Jared Goff (QB) 22.6</p>
+        <p class="blurb">L.A. Kimballs beat Baby Billy&#39;s Bible Bonkers 129.1–105.3.</p>
+      </article>
+      
+    </div>
+
+    
+    <div class="section-head"><h3>Up Next</h3><span class="meta">Week 4 · projected</span></div>
+    <div class="cards">
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CatsAndDogs/cats_dogs-6.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FLU'}))">
+    <div class="nm"><span class="team">The Flutes</span>
+      <span class="mgr">Daniel · 2-1</span></div>
+    <span class="pts">122.8</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://st2.depositphotos.com/4265001/10158/v/950/depositphotos_101580264-stock-illustration-pug-dog-logo.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LBT'}))">
+    <div class="nm"><span class="team">LB The Cookery</span>
+      <span class="mgr">Eamonn · 1-2</span></div>
+    <span class="pts">115.3</span>
+  </div>
+        <p class="blurb">The Flutes projected 122.8 to 115.3.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/core/BobsBurgers/Bob_Happy.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MAR'}))">
+    <div class="nm"><span class="team">Hurts When I Twist Em</span>
+      <span class="mgr">Ian · 1-2</span></div>
+    <span class="pts">105.1</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/30e2a6e0-9abe-11f1-9b94-67d561221a90" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GT3'}))">
+    <div class="nm"><span class="team">Greg&#39;s Baby Dolls</span>
+      <span class="mgr">George · 1-2</span></div>
+    <span class="pts">111.6</span>
+  </div>
+        <p class="blurb">Greg&#39;s Baby Dolls projected 111.6 to 105.1.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/Xmas-AndrewJanik/XMas_15.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'Nic'}))">
+    <div class="nm"><span class="team">Washington Murder Hornets</span>
+      <span class="mgr">Nick · 2-1</span></div>
+    <span class="pts">103.8</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CoachGruden-ChipWass/gruden-06.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'HIC'}))">
+    <div class="nm"><span class="team">Romo is my designated driver</span>
+      <span class="mgr">Paul · 2-1</span></div>
+    <span class="pts">112.3</span>
+  </div>
+        <p class="blurb">Romo is my designated driver projected 112.3 to 103.8.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/SuperCrusher-JamesYang/SuperCrusher-07.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'TC'}))">
+    <div class="nm"><span class="team">Nice Pitts</span>
+      <span class="mgr">Tex · 0-3</span></div>
+    <span class="pts">99.6</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/FrozenTundra-ToddDetwiler/TundraPack_10_01.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GIG'}))">
+    <div class="nm"><span class="team">Giggle Island</span>
+      <span class="mgr">Andy · 2-1</span></div>
+    <span class="pts">118.8</span>
+  </div>
+        <p class="blurb">Giggle Island projected 118.8 to 99.6.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="http://c3.nrostatic.com/sites/default/files/uploaded/petec.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'DLB'}))">
+    <div class="nm"><span class="team">Daejon Love Bomb</span>
+      <span class="mgr">Alex · 2-1</span></div>
+    <span class="pts">114.3</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="http://chiefwritingwolf.files.wordpress.com/2012/06/randy-bish-062212.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MED'}))">
+    <div class="nm"><span class="team">The Hebrew Hammer</span>
+      <span class="mgr">Medvene · 1-2</span></div>
+    <span class="pts">88.2</span>
+  </div>
+        <p class="blurb">Daejon Love Bomb projected 114.3 to 88.2.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Charli_XCX_-_Brat_%28album_cover%29.png/640px-Charli_XCX_-_Brat_%28album_cover%29.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LAK'}))">
+    <div class="nm"><span class="team">L.A. Kimballs</span>
+      <span class="mgr">Greg · 2-1</span></div>
+    <span class="pts">115.7</span>
+  </div>
+        <div class="side ">
+    <span class="logo ph">MED</span>
+    <div class="nm"><span class="team">The Median</span>
+      <span class="mgr"><span class="median-tag">LEAGUE MEDIAN</span></span></div>
+    <span class="pts">—</span>
+  </div>
+        <p class="blurb">L.A. Kimballs (proj. 115.7) needs to beat the league median.</p>
+      </article>
+      
+      <article class="card match">
+        <div class="side ">
+    <img class="logo" src="https://ih1.redbubble.net/image.3321528331.1146/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GEM'}))">
+    <div class="nm"><span class="team">Baby Billy&#39;s Bible Bonkers</span>
+      <span class="mgr">Joe · 2-1</span></div>
+    <span class="pts">100.6</span>
+  </div>
+        <div class="side ">
+    <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-13.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FRA'}))">
+    <div class="nm"><span class="team">Never Gonna Gibbs You Up</span>
+      <span class="mgr">Reid · 2-1</span></div>
+    <span class="pts">102.4</span>
+  </div>
+        <p class="blurb">Never Gonna Gibbs You Up projected 102.4 to 100.6.</p>
+      </article>
+      
+    </div>
+    
+  </section>
+
+  <section class="tab" id="teams">
+    <div class="section-head" style="margin-top:0"><h3>The Teams</h3><span class="meta">Weekly scores · green = W</span></div>
+    <div class="cards">
+      
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CatsAndDogs/cats_dogs-6.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FLU'}))">
+          <div style="min-width:0"><h3>The Flutes</h3><span class="meta">Daniel</span></div>
+          <div class="rec">2-1<small>#1</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:81.0%" title="Wk 1: 139.5"></span>
+          
+          
+          <span class="l" style="height:67.6%" title="Wk 2: 116.4"></span>
+          
+          
+          <span class="w" style="height:100.0%" title="Wk 3: 172.2"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 428.1</span><span>Power #1</span><span>vs Median 3-0</span></div>
+        <p>2-1, 428.1 PF, power rank #1.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/FrozenTundra-ToddDetwiler/TundraPack_10_01.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GIG'}))">
+          <div style="min-width:0"><h3>Giggle Island</h3><span class="meta">Andy</span></div>
+          <div class="rec">2-1<small>#2</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="l" style="height:76.3%" title="Wk 1: 131.4"></span>
+          
+          
+          <span class="w" style="height:80.8%" title="Wk 2: 139.1"></span>
+          
+          
+          <span class="w" style="height:83.9%" title="Wk 3: 144.4"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 414.9</span><span>Power #2</span><span>vs Median 3-0</span></div>
+        <p>2-1, 414.9 PF, power rank #2.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/CoachGruden-ChipWass/gruden-06.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'HIC'}))">
+          <div style="min-width:0"><h3>Romo is my designated driver</h3><span class="meta">Paul</span></div>
+          <div class="rec">2-1<small>#3</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="l" style="height:61.1%" title="Wk 1: 105.3"></span>
+          
+          
+          <span class="w" style="height:85.2%" title="Wk 2: 146.8"></span>
+          
+          
+          <span class="w" style="height:82.2%" title="Wk 3: 141.6"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 393.7</span><span>Power #3</span><span>vs Median 2-1</span></div>
+        <p>2-1, 393.7 PF, power rank #3.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Charli_XCX_-_Brat_%28album_cover%29.png/640px-Charli_XCX_-_Brat_%28album_cover%29.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LAK'}))">
+          <div style="min-width:0"><h3>L.A. Kimballs</h3><span class="meta">Greg</span></div>
+          <div class="rec">2-1<small>#4</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:80.3%" title="Wk 1: 138.2"></span>
+          
+          
+          <span class="l" style="height:53.5%" title="Wk 2: 92.1"></span>
+          
+          
+          <span class="w" style="height:75.0%" title="Wk 3: 129.1"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 359.4</span><span>Power #4</span><span>vs Median 2-1</span></div>
+        <p>2-1, 359.4 PF, power rank #4.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/GridironWarriors-MartinLaksman/warriors-13.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'FRA'}))">
+          <div style="min-width:0"><h3>Never Gonna Gibbs You Up</h3><span class="meta">Reid</span></div>
+          <div class="rec">2-1<small>#5</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:71.7%" title="Wk 1: 123.4"></span>
+          
+          
+          <span class="l" style="height:54.1%" title="Wk 2: 93.1"></span>
+          
+          
+          <span class="w" style="height:76.0%" title="Wk 3: 130.9"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 347.4</span><span>Power #5</span><span>vs Median 2-1</span></div>
+        <p>2-1, 347.4 PF, power rank #5.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/ffl/Xmas-AndrewJanik/XMas_15.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'Nic'}))">
+          <div style="min-width:0"><h3>Washington Murder Hornets</h3><span class="meta">Nick</span></div>
+          <div class="rec">2-1<small>#6</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="l" style="height:74.0%" title="Wk 1: 127.5"></span>
+          
+          
+          <span class="w" style="height:58.4%" title="Wk 2: 100.5"></span>
+          
+          
+          <span class="w" style="height:59.5%" title="Wk 3: 102.4"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 330.4</span><span>Power #6</span><span>vs Median 1-0</span></div>
+        <p>2-1, 330.4 PF, power rank #6.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="http://c3.nrostatic.com/sites/default/files/uploaded/petec.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'DLB'}))">
+          <div style="min-width:0"><h3>Daejon Love Bomb</h3><span class="meta">Alex</span></div>
+          <div class="rec">2-1<small>#7</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:63.0%" title="Wk 1: 108.5"></span>
+          
+          
+          <span class="w" style="height:71.9%" title="Wk 2: 123.8"></span>
+          
+          
+          <span class="l" style="height:50.3%" title="Wk 3: 86.7"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 319.0</span><span>Power #8</span><span>vs Median 1-2</span></div>
+        <p>2-1, 319.0 PF, power rank #8.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://ih1.redbubble.net/image.3321528331.1146/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GEM'}))">
+          <div style="min-width:0"><h3>Baby Billy&#39;s Bible Bonkers</h3><span class="meta">Joe</span></div>
+          <div class="rec">2-1<small>#8</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:62.0%" title="Wk 1: 106.8"></span>
+          
+          
+          <span class="w" style="height:57.4%" title="Wk 2: 98.8"></span>
+          
+          
+          <span class="l" style="height:61.1%" title="Wk 3: 105.3"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 310.9</span><span>Power #10</span><span>vs Median 1-2</span></div>
+        <p>2-1, 310.9 PF, power rank #10.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/lm-static/logo-packs/core/BobsBurgers/Bob_Happy.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MAR'}))">
+          <div style="min-width:0"><h3>Hurts When I Twist Em</h3><span class="meta">Ian</span></div>
+          <div class="rec">1-2<small>#9</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="l" style="height:47.4%" title="Wk 1: 81.7"></span>
+          
+          
+          <span class="w" style="height:98.0%" title="Wk 2: 168.8"></span>
+          
+          
+          <span class="l" style="height:49.0%" title="Wk 3: 84.4"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 334.9</span><span>Power #11</span><span>vs Median 1-2</span></div>
+        <p>1-2, 334.9 PF, power rank #11.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://st2.depositphotos.com/4265001/10158/v/950/depositphotos_101580264-stock-illustration-pug-dog-logo.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'LBT'}))">
+          <div style="min-width:0"><h3>LB The Cookery</h3><span class="meta">Eamonn</span></div>
+          <div class="rec">1-2<small>#10</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="l" style="height:69.6%" title="Wk 1: 119.8"></span>
+          
+          
+          <span class="w" style="height:70.0%" title="Wk 2: 120.5"></span>
+          
+          
+          <span class="l" style="height:49.0%" title="Wk 3: 84.3"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 324.6</span><span>Power #9</span><span>vs Median 1-1</span></div>
+        <p>1-2, 324.6 PF, power rank #9.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/30e2a6e0-9abe-11f1-9b94-67d561221a90" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'GT3'}))">
+          <div style="min-width:0"><h3>Greg&#39;s Baby Dolls</h3><span class="meta">George</span></div>
+          <div class="rec">1-2<small>#12</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:93.1%" title="Wk 1: 160.4"></span>
+          
+          
+          <span class="l" style="height:35.0%" title="Wk 2: 60.2"></span>
+          
+          
+          <span class="l" style="height:57.2%" title="Wk 3: 98.5"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 319.1</span><span>Power #7</span><span>vs Median 1-2</span></div>
+        <p>1-2, 319.1 PF, power rank #7.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="http://chiefwritingwolf.files.wordpress.com/2012/06/randy-bish-062212.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'MED'}))">
+          <div style="min-width:0"><h3>The Hebrew Hammer</h3><span class="meta">Medvene</span></div>
+          <div class="rec">1-2<small>#13</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="w" style="height:69.2%" title="Wk 1: 119.1"></span>
+          
+          
+          <span class="l" style="height:43.4%" title="Wk 2: 74.7"></span>
+          
+          
+          <span class="l" style="height:38.3%" title="Wk 3: 65.9"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 259.7</span><span>Power #13</span><span>vs Median 0-3</span></div>
+        <p>1-2, 259.7 PF, power rank #13.</p>
+      </article>
+      
+      <article class="card team-card">
+        <header>
+          <img class="logo" src="https://g.espncdn.com/s/ffllm/logos/SuperCrusher-JamesYang/SuperCrusher-07.svg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo ph',textContent:'TC'}))">
+          <div style="min-width:0"><h3>Nice Pitts</h3><span class="meta">Tex</span></div>
+          <div class="rec">0-3<small>#14</small></div>
+        </header>
+        <div class="spark" aria-hidden="true">
+          
+          
+          <span class="l" style="height:60.9%" title="Wk 1: 104.8"></span>
+          
+          
+          <span class="l" style="height:54.0%" title="Wk 2: 93.0"></span>
+          
+          
+          <span class="l" style="height:58.8%" title="Wk 3: 101.3"></span>
+          
+        </div>
+        <div class="stats meta"><span>PF 299.1</span><span>Power #12</span><span>vs Median 0-3</span></div>
+        <p>0-3, 299.1 PF, power rank #12.</p>
+      </article>
+      
+    </div>
+  </section>
+
+  <section class="tab" id="standings">
+    <div class="section-head" style="margin-top:0"><h3>Standings</h3><span class="meta">Through week 3</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th class="tm">Team</th><th>W-L</th><th>PF</th><th>PA</th><th>All-Play</th><th>vs Med</th><th>Luck</th><th>Pwr</th><th>Strk</th></tr></thead>
+        <tbody>
+        
+          <tr><td class="num">1</td>
+            <td class="tm">The Flutes<small>Daniel</small></td>
+            <td class="num">2-1</td>
+            <td class="num">428.1</td>
+            <td class="num">376.7</td>
+            <td class="num">30-6</td>
+            <td class="num">3-0</td>
+            <td class="num neg">-0.5</td>
+            <td class="num">1</td>
+            <td class="num">W1</td></tr>
+        
+          <tr><td class="num">2</td>
+            <td class="tm">Giggle Island<small>Andy</small></td>
+            <td class="num">2-1</td>
+            <td class="num">414.9</td>
+            <td class="num">284.1</td>
+            <td class="num">30-6</td>
+            <td class="num">3-0</td>
+            <td class="num neg">-0.5</td>
+            <td class="num">2</td>
+            <td class="num">W2</td></tr>
+        
+          <tr><td class="num">3</td>
+            <td class="tm">Romo is my designated driver<small>Paul</small></td>
+            <td class="num">2-1</td>
+            <td class="num">393.7</td>
+            <td class="num">319.8</td>
+            <td class="num">23-13</td>
+            <td class="num">2-1</td>
+            <td class="num ">+0.1</td>
+            <td class="num">3</td>
+            <td class="num">W2</td></tr>
+        
+          <tr><td class="num">4</td>
+            <td class="tm">L.A. Kimballs<small>Greg</small></td>
+            <td class="num">2-1</td>
+            <td class="num">359.4</td>
+            <td class="num">356.6</td>
+            <td class="num">20-16</td>
+            <td class="num">2-1</td>
+            <td class="num ">+0.3</td>
+            <td class="num">4</td>
+            <td class="num">W1</td></tr>
+        
+          <tr><td class="num">5</td>
+            <td class="tm">Never Gonna Gibbs You Up<small>Reid</small></td>
+            <td class="num">2-1</td>
+            <td class="num">347.4</td>
+            <td class="num">307.0</td>
+            <td class="num">20-16</td>
+            <td class="num">2-1</td>
+            <td class="num ">+0.3</td>
+            <td class="num">5</td>
+            <td class="num">W1</td></tr>
+        
+          <tr><td class="num">6</td>
+            <td class="tm">Washington Murder Hornets<small>Nick</small></td>
+            <td class="num">2-1</td>
+            <td class="num">330.4</td>
+            <td class="num">297.2</td>
+            <td class="num">20-16</td>
+            <td class="num">1-0</td>
+            <td class="num ">+0.3</td>
+            <td class="num">6</td>
+            <td class="num">W2</td></tr>
+        
+          <tr><td class="num">7</td>
+            <td class="tm">Daejon Love Bomb<small>Alex</small></td>
+            <td class="num">2-1</td>
+            <td class="num">319.0</td>
+            <td class="num">327.8</td>
+            <td class="num">16-20</td>
+            <td class="num">1-2</td>
+            <td class="num pos">+0.7</td>
+            <td class="num">8</td>
+            <td class="num">L1</td></tr>
+        
+          <tr><td class="num">8</td>
+            <td class="tm">Baby Billy&#39;s Bible Bonkers<small>Joe</small></td>
+            <td class="num">2-1</td>
+            <td class="num">310.9</td>
+            <td class="num">303.8</td>
+            <td class="num">15-21</td>
+            <td class="num">1-2</td>
+            <td class="num pos">+0.8</td>
+            <td class="num">10</td>
+            <td class="num">L1</td></tr>
+        
+          <tr><td class="num">9</td>
+            <td class="tm">Hurts When I Twist Em<small>Ian</small></td>
+            <td class="num">1-2</td>
+            <td class="num">334.9</td>
+            <td class="num">351.7</td>
+            <td class="num">14-22</td>
+            <td class="num">1-2</td>
+            <td class="num ">-0.2</td>
+            <td class="num">11</td>
+            <td class="num">L1</td></tr>
+        
+          <tr><td class="num">10</td>
+            <td class="tm">LB The Cookery<small>Eamonn</small></td>
+            <td class="num">1-2</td>
+            <td class="num">324.6</td>
+            <td class="num">339.7</td>
+            <td class="num">15-21</td>
+            <td class="num">1-1</td>
+            <td class="num ">-0.2</td>
+            <td class="num">9</td>
+            <td class="num">L1</td></tr>
+        
+          <tr><td class="num">12</td>
+            <td class="tm">Greg&#39;s Baby Dolls<small>George</small></td>
+            <td class="num">1-2</td>
+            <td class="num">319.1</td>
+            <td class="num">431.0</td>
+            <td class="num">16-20</td>
+            <td class="num">1-2</td>
+            <td class="num ">-0.3</td>
+            <td class="num">7</td>
+            <td class="num">L2</td></tr>
+        
+          <tr><td class="num">13</td>
+            <td class="tm">The Hebrew Hammer<small>Medvene</small></td>
+            <td class="num">1-2</td>
+            <td class="num">259.7</td>
+            <td class="num">328.2</td>
+            <td class="num">6-30</td>
+            <td class="num">0-3</td>
+            <td class="num pos">+0.5</td>
+            <td class="num">13</td>
+            <td class="num">L2</td></tr>
+        
+          <tr><td class="num">14</td>
+            <td class="tm">Nice Pitts<small>Tex</small></td>
+            <td class="num">0-3</td>
+            <td class="num">299.1</td>
+            <td class="num">309.7</td>
+            <td class="num">9-27</td>
+            <td class="num">0-3</td>
+            <td class="num neg">-0.8</td>
+            <td class="num">12</td>
+            <td class="num">L3</td></tr>
+        
+        </tbody>
+      </table>
+    </div>
+    <p class="legend"><b>All-Play</b>: record if you played every team every week. <b>vs Med</b>: weeks above the league median. <b>Luck</b>: actual wins minus all-play-expected wins. <b>Pwr</b>: rank by all-play win %.</p>
+  </section>
+
+  <section class="tab" id="awards">
+    <div class="section-head" style="margin-top:0"><h3>Week 3 Awards</h3></div>
+    <div class="cards">
+      
+      <article class="card award">
+        <p class="kicker">Top Dog</p>
+        <h3>The Flutes</h3>
+        <span class="meta">Daniel</span>
+        <div class="val">172.2</div>
+        <p>Week-high 172.2 — takes the weekly payout.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Basement Dweller</p>
+        <h3>The Hebrew Hammer</h3>
+        <span class="meta">Medvene</span>
+        <div class="val">65.9</div>
+        <p>Week-low 65.9.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Biggest Blowout</p>
+        <h3>The Flutes</h3>
+        <span class="meta">Daniel</span>
+        <div class="val">73.7</div>
+        <p>Beat Greg&#39;s Baby Dolls by 73.7.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Nail-Biter</p>
+        <h3>L.A. Kimballs</h3>
+        <span class="meta">Greg</span>
+        <div class="val">23.8</div>
+        <p>Survived Baby Billy&#39;s Bible Bonkers by 23.8.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Daylight Robbery</p>
+        <h3>Washington Murder Hornets</h3>
+        <span class="meta">Nick</span>
+        <div class="val">102.4</div>
+        <p>Won with just 102.4.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Heartbreaker</p>
+        <h3>Baby Billy&#39;s Bible Bonkers</h3>
+        <span class="meta">Joe</span>
+        <div class="val">105.3</div>
+        <p>Lost despite scoring 105.3.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Player of the Week</p>
+        <h3>Never Gonna Gibbs You Up</h3>
+        <span class="meta">Reid</span>
+        <div class="val">37.5</div>
+        <p>Jahmyr Gibbs (RB) dropped 37.5.</p>
+      </article>
+      
+      <article class="card award">
+        <p class="kicker">Bench Blunder</p>
+        <h3>LB The Cookery</h3>
+        <span class="meta">Eamonn</span>
+        <div class="val">23.6</div>
+        <p>Left Tyler Shough (26.2) on the bench, started Drake Maye (2.6).</p>
+      </article>
+      
+    </div>
+  </section>
+
+  <section class="tab roundup" id="roundup">
+    <p class="kicker">The Round Up · Week 3</p>
+    <h2 style="font-size:clamp(40px,9vw,60px);margin:4px 0 24px">State of the League</h2>
+    <p>The Flutes sits atop the standings at 2-1.</p>
+    <div class="section-head"><h3>Archive</h3></div>
+    <ul class="archive">
+      <li><a class="cur" href="weeks/week3.html">Week 3</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap meta">Road to the Ticerado Bowl · generated 2026-09-29 21:10 · <a href="index.html" style="color:inherit">latest</a></footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add("js");
+  var tabs = ["home", "teams", "standings", "awards", "roundup"];
+  function show() {
+    var id = location.hash.slice(1);
+    if (tabs.indexOf(id) < 0) id = "home";
+    tabs.forEach(function (t) {
+      document.getElementById(t).classList.toggle("active", t === id);
+      var a = document.querySelector('nav.tabs a[data-tab="' + t + '"]');
+      if (t === id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("hashchange", function () { show(); window.scrollTo(0, document.querySelector("nav.tabs").offsetTop); });
+  show();
+})();
+</script>
+</body>
+</html>
