@@ -7,7 +7,7 @@
   "reg_season_weeks": 14,
   "playoff_teams": 6,
   "fake_team_id": "22",
-  "generated_at": "2026-10-06T11:08",
+  "generated_at": "2026-10-06T11:16",
   "teams": {
    "1": {
     "id": "1",
@@ -8541,193 +8541,193 @@
   ]
  },
  "copy": {
-  "dek": "Week 5 brings a heavyweight bout at Giggle Island, a league-best Flutes team facing a lineup with two questionable stars, and Reid drawing the only opponent who never has a bad week. Four games are separated by single digits in projection, so pay attention.",
-  "preview_headline": "Giggle Island Hosts Heavyweights",
+  "dek": "Week 5 puts Giggle Island and the L.A. Kimballs head to head in the only game where both sides can actually score, while Daniel's Flutes try to survive a Ian-sized layup with two questionable stars.",
+  "preview_headline": "Giggle Island Hosts Kimball Collision",
   "preview_intro": [
-   "Four weeks in, the league has sorted itself into a top group and a crowd. Daniel's Flutes lead the power rankings with a 36-12 all-play mark and a 135.6 scoring average, and four teams sit at 3-1. Behind them is a big pile of 2-2s and 1-3s who are one good Sunday from changing the picture. Nobody has pulled away, but a few teams have started to look like the real thing.",
-   "The best game on the slate is Andy's Giggle Island hosting Greg's Kimballs, a battle of two top-four power teams separated by 3.5 projected points. Elsewhere, Medvene is without Justin Jefferson, Reid takes on The Median, and Daniel is carrying two questionable stars into a game he should win anyway. Here are the matchups."
+   "Four weeks in, the league has sorted itself into a top tier of 3-1 teams (Daniel, Paul, Greg and Reid) and a thick, anxious middle of 2-2s who are one bad Sunday from being 2-3. The all-play table says the top of the standings is mostly legit: The Flutes, Njigba Warrior and Kimballs are averaging north of 131 a week, and nobody else is within six points of them.",
+   "This week's headliner is Andy's Giggle Island, 2-2 despite the fourth-best all-play mark, hosting Greg's 3-1 Kimballs in a projected three-and-a-half-point nailbiter. Elsewhere, Daniel is a heavy favorite over Ian, Paul gets Alex, Reid draws The Median, and the basement trio of Eamonn, Tex and Ian are all looking for a first breath of air. Let's get to it."
   ],
   "game_of_week": {
    "home_id": "17",
    "away_id": "1",
-   "blurb": "Andy's Giggle Island (112.99 projected) hosts Greg's Kimballs (109.52), and it's the closest and best matchup of the week. Andy is 2-2 but ranks fourth in the power rankings and bounced back from a rough 88.5. Greg is 3-1 coming off the week-high 167.1, though Ja'Marr Chase is questionable. One team is better than its record, the other is playing great, and only one gets to be right."
+   "blurb": "Andy's Giggle Island is projected at 112.99 against Greg's 109.52, the closest margin among the heavyweights. Andy is a 2-2 team that scores like a 3-1 team and just lost by leaving Malik Nabers on the bench; Greg is riding a 167.1-point week but has Ja'Marr Chase listed questionable. This is the one where lineup-setting could decide everything."
   },
   "upcoming": [
    {
     "home_id": "9",
     "away_id": "7",
-    "blurb": "Ian's 1-3 Hurts When I Twist Em projects at just 77.17 against Daniel's Flutes at 108.13, a gap of nearly 31 points. Daniel has Jeremiyah Love and Lamar Jackson both questionable, which is the only thing keeping this from being a coronation. Even a compromised Flutes team is the clear favorite."
+    "blurb": "Daniel's Flutes (3-1, power rank 1) are projected at 108.13 against Ian's 77.17, a 31-point gap that makes this the most lopsided game on the board. The catch for Daniel: Jeremiyah Love and Lamar Jackson are both questionable, so he'll be watching the injury report with a lot of cushion but not a lot of comfort. Ian is 1-3 and needs the surprise."
    },
    {
     "home_id": "18",
     "away_id": "14",
-    "blurb": "Eamonn's Cookery is 1-3 and last in the power rankings, and it hosts Nick's Murder Hornets, projected 105.14 to 97.91. Rashee Rice and DJ Moore are both questionable, which could sink Eamonn's already thin projection. Nick is 2-2 and trying to stop a one-game slide."
+    "blurb": "Eamonn's Cookery (1-3, last in the power rankings) is projected at 97.91 against Nick's 105.14, and Rashee Rice and DJ Moore are both questionable, which is a lot of receiver uncertainty for a team coming off a league-low 80.3. Nick is 2-2 and coming off a loss, but he's the healthier and favored side."
    },
    {
     "home_id": "21",
     "away_id": "4",
-    "blurb": "George's Baby Dolls (102.15) host Tex's Nice Pitts (84.73) in a matchup of two teams that each won last week. George is the clear favorite by about 17 points, and both lineups are fully healthy. Tex needs another CeeDee Lamb-sized performance to flip the script."
+    "blurb": "George's Baby Dolls are projected at 102.15 against Tex's Nice Pitts at 84.73, a comfortable edge for the home side. Both teams are coming off wins, and Tex is 1-3 and needs another CeeDee Lamb special to cover that gap. No injured starters on either side."
    },
    {
     "home_id": "11",
     "away_id": "13",
-    "blurb": "Paul's American Njigba Warrior is on a three-game win streak and projects at 111.67 against Alex's Love Bomb at 97.8. Paul has Tee Higgins questionable and Alex has Ladd McConkey the same way. Alex has lost two in a row despite the heartbreak of a 124.0 loss, so he deserves a break from the schedule gods."
+    "blurb": "Paul's Njigba Warrior (3-1, three straight wins) is projected at 111.67 against Alex's 97.8, with Tee Higgins questionable for Paul and Ladd McConkey questionable for Alex. Alex has lost two in a row, including a 124-point heartbreaker, and needs a better break than he's gotten."
    },
    {
     "home_id": "17",
     "away_id": "1",
-    "blurb": "The game of the week: Andy projects at 112.99 to Greg's 109.52, which is basically a coin flip with a slight lean to the home side. Chase's questionable tag is the only injury note and it falls on Greg's side. Both teams rank in the top four of the power rankings, so this one matters beyond the record."
+    "blurb": "Andy is projected at 112.99 to Greg's 109.52 in the week's best game. Andy has the better all-play record in the middle of a 2-2 start and the home-side edge, while Greg has Chase questionable and a Goedert-shaped hole on IR. A 3.5-point spread is a coin flip with a hat on."
    },
    {
     "home_id": "6",
     "away_id": "20",
-    "blurb": "Medvene's Hebrew Hammer is without Justin Jefferson (OUT), yet still projects at 91.94 against Joe's 75.82. Joe has Saquon Barkley questionable, and his lineup is the lowest-projected in the league this week. Two 2-2 teams, two thin rosters, one meh affair."
+    "blurb": "Medvene's Hebrew Hammer is projected at 91.94 against Joe's 75.82, but Justin Jefferson is OUT in Medvene's lineup, so that edge is already wearing a limp. Joe has Saquon Barkley questionable and a projection that suggests the Bible Bonkers need divine intervention. Both are 2-2."
    },
    {
     "home_id": "22",
     "away_id": "12",
-    "blurb": "Reid's Never Gonna Gibbs You Up projects at 111.99 and plays The Median, which scores exactly the league median every week. That means Reid must be above average to win, and he enters 3-1 with a healthy lineup. The Median is not great at fantasy football but never has a bad week either."
+    "blurb": "Reid's Gibbs squad faces The Median, projected at 111.99 with a clean injury report. The Median scores exactly the league median every week, so Reid needs to beat the middle of the league rather than a person. Last week's median was 114.4, which is just a hair above his projection, so he can't coast."
    }
   ],
-  "power": "Daniel's Flutes sit atop the rankings at 36-12 all-play, followed by Paul and Greg, with Andy fourth. Reid is the luckiest team at +0.7 in fifth, and Joe and Medvene (+0.6 each) are close behind, both sitting at 2-2 while ranking 11th and 12th. Andy is the unluckiest at -0.6, sitting at 2-2 despite a 31-17 all-play mark, with Tex (-0.5) and Ian (-0.4) also deserving better.",
-  "injury_spotlight": "Medvene's Training Room is the busiest in the league this week. Justin Jefferson is OUT and was projected for 15.26, which is a real hole in a lineup that projects at only 91.94. Jayden Daniels is out on IR and Josh Jacobs is day-to-day on the bench, so help isn't coming from there either. Joe's Bonkers are the only opponent he could face this week and still be favored against, so Medvene is lucky in his draw.",
-  "playoffs": "Way too early to be drawing lines, but the current top six are the four 3-1 teams (Daniel, Paul, Greg, Reid) plus Andy and Alex at 2-2. Nick and George are knocking at 2-2, and Joe and Medvene (2-2) are close behind. Ian, Tex and Eamonn at 1-3 are the long shots, but with 14 regular-season weeks and six spots, one hot month changes everything.",
-  "recap_headline": "Greg's 167 Steals Show",
+  "power": "The Flutes sit atop the all-play rankings at 36-12 with a 135.62 average, followed closely by Paul's Njigba Warrior and Greg's Kimballs. Reid is the luckiest manager (+0.7) with a 3-1 record that outruns his fifth-ranked all-play mark, while Andy is the unluckiest (-0.6), a 2-2 team whose all-play record is fourth best. Joe and Medvene are also getting a little help from the schedule (+0.6 each) given their 17-31 all-play records.",
+  "injury_spotlight": "Greg's Training Room is busy but mostly on the bench: Ja'Marr Chase (WR, QUESTIONABLE) is the one starter at risk, projected at 18.13, while Rachaad White (RB, OUT) and Kyle Monangai (RB, QUESTIONABLE) are bench pieces and Dallas Goedert (TE, OUT) is stashed on IR. No starter is projected at zero, so Greg's lineup stands, but if Chase sits he loses his biggest projected piece against Andy's Giggle Island in a 3.5-point game. The thin running back depth behind him makes a late scratch the one thing Greg can't afford.",
+  "playoffs": "Way-too-early standings trivia: a lot can change, but right now the top six are Daniel, Paul, Greg and Reid at 3-1, plus Andy and Alex at 2-2. Nick and George are the first two knocking at the door at 2-2. Joe and Medvene (2-2) plus Ian, Tex and Eamonn (1-3) are the long shots, though with ten weeks left nobody is anywhere close to counted out.",
+  "recap_headline": "Kimballs Run Wild",
   "recap": [
-   "Greg's Kimballs took the weekly payout with a league-high 167.1, powered by 40.0 points from Tetairoa McMillan, the Player of the Week. That also made a 52.7-point blowout of The Median. Daniel's Flutes scored 114.4 (exactly the median) and rode a 30.5-point Bijan Robinson to a win over Eamonn.",
-   "George's Baby Dolls won a nail-biter over Ian by 13.1 with just 114.2, while Alex lost with 124.0 against Medvene's 139.9. Eamonn took the week-low 80.3 and is now 1-3."
+   "Greg's Kimballs posted the week's high of 167.1 and pocketed the weekly payout, powered by Tetairoa McMillan's 40.0, a league-best individual score against a projection of 13.37. That also beat The Median by 52.7, the week's biggest blowout.",
+   "At the other end, Eamonn's Cookery posted a league-low 80.3 and fell to Daniel's Flutes, who scored exactly the median at 114.4. Giggle Island dropped to 2-2 after a 88.5 clunker in which Andy left Malik Nabers (22.0) on the bench for Parker Washington (1.5), and Alex lost despite scoring 124.0."
   ],
   "results": [
    {
     "home_id": "7",
     "away_id": "18",
-    "blurb": "Daniel's Flutes beat Eamonn's Cookery 114.4 to 80.3 behind Bijan Robinson's 30.5. Eamonn's best player was Tyler Shough at 17.4, which tells you everything."
+    "blurb": "Daniel's Flutes beat Eamonn's Cookery 114.4 to 80.3, with Bijan Robinson's 30.5 doing the heavy lifting. Eamonn's best player was Tyler Shough at 17.4, and the team took the week's low score."
    },
    {
     "home_id": "9",
     "away_id": "21",
-    "blurb": "George edged Ian 114.2 to 101.1 as Puka Nacua put up 24.5. Ian got 25.4 from Bryce Young, which should not be a sentence we have to write."
+    "blurb": "George's Baby Dolls edged Ian's Hurts When I Twist Em 114.2 to 101.1, helped by Puka Nacua's 24.5. Ian got 25.4 from Bryce Young and still dropped to 1-3."
    },
    {
     "home_id": "14",
     "away_id": "11",
-    "blurb": "Paul beat Nick 133.6 to 107.0, with Dak Prescott's 21.8 leading the way. Kyren Williams had 32.0 for Nick, but nobody else helped."
+    "blurb": "Paul's Njigba Warrior won 133.6 to 107.0 for a third straight win, getting 21.8 from Dak Prescott. Nick got 32.0 from Kyren Williams and little else."
    },
    {
     "home_id": "4",
     "away_id": "17",
-    "blurb": "Tex beat Andy 130.3 to 88.5 with CeeDee Lamb going for 34.5. Andy left Malik Nabers (22.0) on the bench, which didn't help."
+    "blurb": "Tex's Nice Pitts won 130.3 to 88.5 as CeeDee Lamb went for 34.5 against a 13.3 projection. Andy's afternoon was sunk by leaving Nabers on the bench."
    },
    {
     "home_id": "13",
     "away_id": "6",
-    "blurb": "Medvene won 139.9 to 124.0 on 27.5 from Nico Collins. Alex scored well enough to beat most weeks but ran into a buzzsaw, with Kenneth Walker III scoring 31.5."
+    "blurb": "Medvene's Hebrew Hammer topped Alex's Love Bomb 139.9 to 124.0, with Nico Collins at 27.5. Alex got 31.5 from Kenneth Walker III and still lost, which is the cruelest way to do it."
    },
    {
     "home_id": "1",
     "away_id": "22",
-    "blurb": "Greg's Kimballs crushed The Median 167.1 to 114.4, with 40.0 from Tetairoa McMillan. The Median's best player was a Dolphins D/ST at 13.5."
+    "blurb": "Greg's Kimballs beat The Median 167.1 to 114.4, a 52.7-point margin that was the week's biggest blowout. Tetairoa McMillan's 40.0 was the best single player score of the week."
    },
    {
     "home_id": "20",
     "away_id": "12",
-    "blurb": "Reid beat Joe 125.6 to 101.0 as Joe Burrow went for 29.8. Chuba Hubbard scored 26.5 for Joe, but it wasn't enough."
+    "blurb": "Reid's Gibbs squad beat Joe's Bible Bonkers 125.6 to 101.0 behind Joe Burrow's 29.8. Chuba Hubbard's 26.5 wasn't enough for Joe, who has lost two straight."
    }
   ],
   "teams": [
    {
     "team_id": "7",
-    "blurb": "The class of the league at 3-1 with a 135.6 average and 542.5 points. Daniel hasn't dropped below 114.4."
+    "blurb": "3-1 with the top power ranking and a 135.62 scoring average, though last week's 114.4 was the lowest of his four games."
    },
    {
     "team_id": "11",
-    "blurb": "Paul is 3-1 on a three-game streak and has scored over 130 in three straight weeks. Steady and dangerous."
+    "blurb": "Three straight wins and a 3-1 record backed up by a 33-15 all-play mark; the most consistent team in the league."
    },
    {
     "team_id": "1",
-    "blurb": "Greg is 3-1 and just posted the week high of 167.1. His 92.1 in Week 2 is the only blemish."
+    "blurb": "A 3-1 start with a 167.1 spike last week, though a 92.1 clunker in Week 2 shows the volatility."
    },
    {
     "team_id": "12",
-    "blurb": "Reid's 3-1 is a bit flattered by luck (+0.7), but 118.3 per week is a solid base. Healthy and facing The Median this week."
+    "blurb": "3-1 and the luckiest team in the league, with a fifth-place all-play record that's good but not great."
    },
    {
     "team_id": "17",
-    "blurb": "Andy is 2-2 with the fourth-best all-play mark and 503.4 points. The 88.5 and the Nabers benching hurt."
+    "blurb": "2-2 and unlucky, with 503.4 points scored (second-most in the league) and a bench decision that cost him last week."
    },
    {
     "team_id": "13",
-    "blurb": "Alex is 2-2 and has lost two straight, including a 124.0 heartbreaker. A better schedule is coming."
+    "blurb": "2-2 after two straight losses, but the 124.0 in a loss last week suggests the team is better than it looks."
    },
    {
     "team_id": "14",
-    "blurb": "Nick is 2-2 and a perfectly average 24-24 in all-play. Consistent at about 107 per week without a big ceiling."
+    "blurb": "2-2 and middle of the pack in every category, with a 24-24 all-play record to match."
    },
    {
     "team_id": "21",
-    "blurb": "George is 2-2 with a boom-or-bust profile: 160.4 in Week 1, 60.2 in Week 2, and 114.2 last week for the win."
+    "blurb": "2-2 after a 160.4 opener, a 60.2 disaster and two modest wins since; a roller coaster with a 1-3 record against the median."
    },
    {
     "team_id": "20",
-    "blurb": "Joe is 2-2 despite being 17-31 in all-play, the second luckiest team. He has lost two straight and rarely scores over 106."
+    "blurb": "2-2 on a diet of 100-ish scores, with a record better than the team's 17-31 all-play mark suggests."
    },
    {
     "team_id": "6",
-    "blurb": "Medvene is 2-2 and averages just 99.9, the lowest in the league. The 139.9 last week was a nice surprise, but Jefferson's absence hurts."
+    "blurb": "2-2 after a 139.9 last week that followed a 65.9; a team that is either great or terrible each week."
    },
    {
     "team_id": "9",
-    "blurb": "Ian is 1-3 with 436.0 points, more than most 2-2 teams. A 168.8 in Week 2 shows the ceiling, but the floor is lower."
+    "blurb": "1-3 despite 436.0 points scored, with a 168.8 week and three scores under 102."
    },
    {
     "team_id": "4",
-    "blurb": "Tex is 1-3 but has won the last week with 130.3, his best of the year. CeeDee Lamb's 34.5 was the engine."
+    "blurb": "1-3 but coming off a win, with CeeDee Lamb's 34.5 leading the way."
    },
    {
     "team_id": "18",
-    "blurb": "Eamonn is 1-3 and has slid from 120.5 to 84.3 to 80.3. The Cookery needs a fresh recipe fast."
+    "blurb": "1-3 with two straight declining scores (84.3, 80.3) and the bottom power ranking."
    }
   ],
   "awards": [
    {
     "key": "top_dog",
-    "quip": "Greg takes the weekly payout with a league-best 167.1 and probably already spent it."
+    "quip": "Greg's 167.1 took the week's top score and the payout, which he can spend on a few extra tight ends."
    },
    {
     "key": "basement",
-    "quip": "Eamonn's 80.3 was the low mark of the week, a number that fits the way he's trending."
+    "quip": "Eamonn's 80.3 was the week's low, and this was the second straight week his team has slipped lower."
    },
    {
     "key": "blowout",
-    "quip": "Greg beat The Median by 52.7, which is the kind of beating that usually involves a cardboard cutout."
+    "quip": "Greg beat The Median by 52.7, which is a wildly lopsided win over a team that doesn't exist."
    },
    {
     "key": "nail_biter",
-    "quip": "George survived Ian by 13.1, which counts as a nail-biter in a week of bigger gaps."
+    "quip": "George survived Ian by 13.1, which is nail-biting only in a league where everything else was a rout."
    },
    {
     "key": "robbery",
-    "quip": "George won with just 114.2, which would've lost to plenty of weeks this season."
+    "quip": "George won with just 114.2, a win that feels like it came out of someone else's pocket."
    },
    {
     "key": "heartbreaker",
-    "quip": "Alex scored 124.0 and lost anyway, the kind of loss that earns a sympathy card."
+    "quip": "Alex scored 124.0 and still lost, which should be a crime."
    },
    {
     "key": "mvp",
-    "quip": "Tetairoa McMillan dropped 40.0 for Greg, nearly triple his 13.37 projection."
+    "quip": "Tetairoa McMillan dropped 40.0 for Greg against a projection of 13.37, which is a rounding error in the best way."
    },
    {
     "key": "bench_blunder",
-    "quip": "Andy sat Malik Nabers (22.0) for Parker Washington (1.5), a 20.5-point error that cost him dearly in an 88.5 week."
+    "quip": "Andy left Malik Nabers (22.0) on the bench for Parker Washington (1.5), a 20.5-point swing in a 41.8-point loss."
    }
   ],
   "round_up": [
-   "The league has a clear top tier: Daniel, Paul, Greg and Andy lead the all-play standings, with Reid in fifth. The rest of the field is bunched together, and nobody below sixth has an all-play record above .500.",
-   "The luck meter says to watch Andy, who is 2-2 despite the fourth-best all-play record, and to be skeptical of Joe and Medvene, both 2-2 with 17-31 all-play marks. Reid also has some good fortune to his 3-1.",
-   "The biggest game is Andy versus Greg, a near coin flip. Also keep an eye on Daniel's questionable stars, Medvene without Jefferson, and Reid against The Median.",
-   "Scoring is volatile: George went from 160.4 to 60.2 in a week and Ian from 168.8 to 84.4. With that much variance, a 20-point projection gap is not a lock. Check your injury designations before kickoff."
+   "State of the league: three teams (Daniel, Paul and Greg) are separating themselves on points, averaging above 131 a game, while everybody else is crammed between 99 and 126. If you're in that second group, Week 5 is a chance to get on the board.",
+   "Trend watch: Eamonn's scores have fallen from 119.8 to 120.5 to 84.3 to 80.3, and Rice and Moore are both questionable this week. Meanwhile Paul has strung together three straight wins and a perfect-ish all-play pace.",
+   "Boom-or-bust award: George (160.4, 60.2, 98.5, 114.2) and Medvene (119.1, 74.7, 65.9, 139.9) have wild ranges, so their games against Tex and Joe are tough to predict.",
+   "What to watch: Andy vs. Greg is the main event, but keep an eye on Daniel's Love and Jackson, Medvene's Jefferson absence, and whether Reid can clear the median again. Check the injury report before kickoff."
   ]
  },
- "spotlight_pin": "Medvene"
+ "spotlight_pin": null
 }
