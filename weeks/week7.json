@@ -7,7 +7,7 @@
   "reg_season_weeks": 14,
   "playoff_teams": 6,
   "fake_team_id": "22",
-  "generated_at": "2026-10-20T10:44",
+  "generated_at": "2026-10-20T10:51",
   "teams": {
    "1": {
     "id": "1",
@@ -11982,7 +11982,7 @@
   "recap_headline": "Chaos Reigns Again",
   "recap": [
    "Joe's Bible Bonkers took the weekly top prize with 133.3 and beat Paul's 120.9, a score that would have won most weeks. Costa's 127.9 was the next-best total, and Kenneth Walker's 28.0 helped him beat Eamonn by 55.6. Eamonn's 72.3 was the week's low. Nick held off Daniel by 9.0 and George won with only 96.9, thanks to Trevor Lawrence's 28.4.",
-   "The week's other bad scores came from Reid (77.9, a loss to Andy) and Greg (80.4). Reid's lineup left DK Metcalf's 15.5 on the bench for Terry McLaurin's 2.5. Medvene's 91.3 lost to The Median's 101.9."
+   "The week's other bad scores came from Reid (77.9, a loss to Andy) and Greg (80.4). Reid's lineup left DK Metcalf's 15.5 on the bench for Terry McLaurin's 2.5. Medvene's 91.3 lost to The Median's 101.9, one week after his 152.4 was the league's top score. He went from best in the league to losing to nobody, a 61.1-point drop."
   ],
   "results": [
    {
@@ -12018,7 +12018,7 @@
    {
     "home_id": "22",
     "away_id": "6",
-    "blurb": "Medvene lost to The Median 101.9 to 91.3, even with Jayden Daniels scoring 24.6. The Median did nothing and still beat him."
+    "blurb": "Medvene lost to The Median 101.9 to 91.3, even with Jayden Daniels scoring 24.6. The Median did nothing and still beat him, a week after Medvene's 152.4 led the whole league."
    }
   ],
   "teams": [
